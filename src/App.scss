@@ -64,10 +64,15 @@ body {
         position: absolute;
         width: 60px;
 
-        &:hover{
-          box-shadow: 0 0 20px 4px var(--neonGreen);
+          &:hover{
+            box-shadow: 0 0 20px 4px var(--neonGreen);
+          }
         }
-        }
+
+      .loading {
+        color: var(--lightCyan);
+        font-size: 18px;
+      }
     }
   }
 
