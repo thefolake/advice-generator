@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 const App = () => {
     const [data, setData] = useState(null);
     const [isLoading, setLoading] = useState(true);
+    const [toggle, setToggle] = useState(true);
 
     const baseUrl = 'https://api.adviceslip.com/advice';
 
@@ -24,11 +25,10 @@ const App = () => {
         }
 
         fetchData();
-    }, []);
+    }, [toggle]);
 
-    const generateNewAdvice = () => {
-        setData(data);
-        window.location.reload()
+    const refresh = () => {
+        setToggle(!toggle);
     }
 
   return (
@@ -41,7 +41,7 @@ const App = () => {
               </>
           }
           <img src='../images/pattern-divider-desktop.svg' alt='pattern divider' className='pattern-divider'/>
-          <div className='icon-dice' onClick={generateNewAdvice}>
+          <div className='icon-dice' onClick={refresh}>
               <img src='../images/icon-dice.svg' alt='icon dice'/>
           </div>
       </div>
